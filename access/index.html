@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="manifest" href="../favicon/site.webmanifest">
+    <link rel="mask-icon" href="../favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap">
+    <link rel="stylesheet" href="../navigation.css">
+    <link rel="stylesheet" href="../sanitize.css">
+    <link rel="stylesheet" href="style.css">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <title>韮崎市の社労士事務所</title>
+    <script src="https://kit.fontawesome.com/e4780c5153.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <a class="logo" href="../index.html">
+            <div>
+                <div class="subtitle">韮崎市の労務コンサルタント</div>
+                <div class="title">長島社会保険労務士事務所</div>
+            </div>
+        </a>
+        <input type="checkbox" id="chk">
+        <label for="chk" class="show-menu-btn">
+            <i class="fas fa-ellipsis-h"></i>
+        </label>
+        <ul class="menu">
+            <a href="index.html">アクセス</a>
+            <a href="../audit/index.html">労務監査の対策・対応</a>
+            <a href="../harassment/index.html">ハラスメント対策</a>
+            <a href="../price/index.html">報酬体系</a>
+            <a href="https://forms.gle/6Uy4fxSnFU1Lb1jH7" target="_blank">助成金診断ツール</a>
+            <a href="https://forms.gle/VEDa9CqENtJHEnQN6" target="_blank">無料相談の申込</a>
+            <label for="chk" class="hide-menu-btn">
+                <i class="fas fa-times"></i>
+            </label>
+        </ul>
+    </header>
+
+    <section>
+        <h1>アクセス</h1>
+        <div class="table_wrapper">
+            <table>
+                <tr>
+                    <td class="left">事務所名</td>
+                    <td>長島社会保険労務士事務所</td>
+                </tr>
+                <tr>
+                    <td class="left">代表者名</td>
+                    <td>長島 貴久夫</td>
+                </tr>
+                <tr>
+                    <td class="left">所在地</td>
+                    <td>山梨県韮崎市藤井町北下條203番地2</td>
+                </tr>
+                <tr>
+                    <td class="left">電話・FAX</td>
+                    <td>0551-22-3897</td>
+                </tr>
+                <tr>
+                    <td class="left">E-mail</td>
+                    <td>jyoseikin@nagashima-sr.jp</td>
+                </tr>
+            </table>
+            <div>
+                <p>
+                    当事務所は、韮崎市営北下條団地北側、東京エレクトロン韮崎文化ホール近くにあります。
+                </p>
+                <p>
+                    駐車スペースもございますので、お車でお越しいただいても結構です。
+                </p>
+                <p>
+                    また、担当社労士のスケジュールを掲載しております。
+                </p>
+                <p>
+                    お問合せはスケジュールが空いている時間帯にして頂けますと幸いです。
+                </p>
+            </div>
+        </div>
+        <div class="iframe_wrapper">
+            <div class="google_map">
+            </div>
+            <div class="google_calendar">
+            </div>
+        </div>
+    </section>
+
+    <!-- iframeのレスポンシブは、CSSのpositionプロパティからでも出来ます。しかし、ナビゲーションバーでもpositionを使っているので、bodyでpositionを使うとナビゲーションバーが崩れます -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>
+        embedIframes();
+
+        $(window).resize(function() {
+            embedIframes();
+        });
+
+        function embedIframes() {
+            embedIframe($(".google_map"), googleMapTemplate);
+            embedIframe($(".google_calendar"), googleCalendarTemplate);
+        }
+
+        function embedIframe(selector, template) {
+            var iframeHtml = assignHeightAndWidthToTemplate(template);
+
+            if (selector.html() != iframeHtml) {
+                selector.html(iframeHtml);
+            }
+        }
+
+        function assignHeightAndWidthToTemplate(template) {
+            if (window.matchMedia('(max-width: 680px)').matches) {
+                return template(320, 400);
+            }
+
+            if (window.matchMedia('(min-width: 681px)').matches) {
+                return template(660, 495);
+            }
+
+            if (window.matchMedia('(min-width: 769px)').matches) {
+                return template(740, 555);
+            }
+
+
+            if (window.matchMedia('(min-width: 1024px)').matches) {
+                return template(1000, 750);
+            }
+        }
+
+        function googleMapTemplate(width, height) {
+            console.log('<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.0290945184033!2d138.44271531521719!3d35.725502980183926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601c0b87218c1c31%3A0xaa96cf82b04b0e67!2z6ZW35bO244O756S-5Lya5L-d6Zm65Yq05YuZ5aOr5LqL5YuZ5omA!5e0!3m2!1sja!2sjp!4v1576760760046!5m2!1sja!2sjp" width="' + width + '" height="' + height + '" frameborder="0" style="border:0;" allowfullscreen=""></iframe>');
+            return '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.0290945184033!2d138.44271531521719!3d35.725502980183926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601c0b87218c1c31%3A0xaa96cf82b04b0e67!2z6ZW35bO244O756S-5Lya5L-d6Zm65Yq05YuZ5aOr5LqL5YuZ5omA!5e0!3m2!1sja!2sjp!4v1576760760046!5m2!1sja!2sjp" width="' + width + '" height="' + height + '" frameborder="0" style="border:0;" allowfullscreen=""></iframe>';
+        }
+
+        function googleCalendarTemplate(width, height) {
+            console.log('<iframe src="https://calendar.google.com/calendar/embed?height=' + height + '&amp;wkst=1&amp;bgcolor=%23fdfdfd&amp;ctz=Asia%2FTokyo&amp;src=bmFnYXNoaW1ha2lrdW83NTI1QGdtYWlsLmNvbQ&amp;src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;src=ZmppaTN0cjExM2JzZWVjaGE2ZmViM2gxa3NAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=cmprYWtvNGFlcTE1ZDVyNG1tbmlxNWwyaW9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=OGt2bTBzZG5vMTllczFwZzRidHVlamNmbm9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=amEuamFwYW5lc2UjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color=%2322AA99&amp;color=%23329262&amp;color=%23402175&amp;color=%23DD4477&amp;color=%2381910B&amp;color=%231F753C&amp;mode=MONTH&amp;showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0" style="border:solid 1px #777" width="' + width + '" height="' + height + '" frameborder="0" scrolling="no"></iframe>');
+            return '<iframe src="https://calendar.google.com/calendar/embed?height=' + height + '&amp;wkst=1&amp;bgcolor=%23fdfdfd&amp;ctz=Asia%2FTokyo&amp;src=bmFnYXNoaW1ha2lrdW83NTI1QGdtYWlsLmNvbQ&amp;src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;src=ZmppaTN0cjExM2JzZWVjaGE2ZmViM2gxa3NAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=cmprYWtvNGFlcTE1ZDVyNG1tbmlxNWwyaW9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=OGt2bTBzZG5vMTllczFwZzRidHVlamNmbm9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=amEuamFwYW5lc2UjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color=%2322AA99&amp;color=%23329262&amp;color=%23402175&amp;color=%23DD4477&amp;color=%2381910B&amp;color=%231F753C&amp;mode=MONTH&amp;showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0" style="border:solid 1px #777" width="' + width + '" height="' + height + '" frameborder="0" scrolling="no"></iframe>';
+        }
+    </script>
+    <script>
+        $(".logo").on("mouseover", function() {
+            $(".title").css('color', '#3498db');
+            $(".subtitle").css('color', '#3498db');
+        });
+
+        $(".logo").on("mouseout", function() {
+            $(".title").css('color', '#bdc3c7');
+            $(".subtitle").css('color', '#bdc3c7');
+        });
+    </script>
+</body>
+
+</html>

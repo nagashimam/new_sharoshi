@@ -1,0 +1,47 @@
+section {
+    background-color: #fdfdfd;
+    color: rgb(49, 49, 49);
+    padding: 40px 16px 16px 16px;
+}
+
+.googleslide {
+    margin: 8px 0;
+}
+
+@media screen and (max-width: 680px) {
+    h1 {
+        font-size: 1.9rem;
+    }
+    table td,
+    table th {
+        font-size: 1.3rem;
+    }
+    a,
+    p {
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (min-width: 681px) {
+    h1 {
+        font-size: 2rem;
+    }
+    table td,
+    table th {
+        font-size: 1.6rem;
+    }
+    a,
+    p {
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    h1 {
+        font-size: 2rem;
+    }
+    a,
+    p {
+        font-size: 1.8rem;
+    }
+}

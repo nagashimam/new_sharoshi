@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="manifest" href="../favicon/site.webmanifest">
+    <link rel="mask-icon" href="../favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap">
+    <link rel="stylesheet" href="../navigation.css">
+    <link rel="stylesheet" href="../sanitize.css">
+    <link rel="stylesheet" href="style.css">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <title>韮崎市の社労士事務所</title>
+    <script src="https://kit.fontawesome.com/e4780c5153.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <a class="logo" href="../index.html">
+            <div>
+                <div class="subtitle">韮崎市の労務コンサルタント</div>
+                <div class="title">長島社会保険労務士事務所</div>
+            </div>
+        </a>
+        <input type="checkbox" id="chk">
+        <label for="chk" class="show-menu-btn">
+            <i class="fas fa-ellipsis-h"></i>
+        </label>
+        <ul class="menu">
+            <a href="../access/index.html">アクセス</a>
+            <a href="index.html">労務監査の対策・対応</a>
+            <a href="../harassment/index.html">ハラスメント対策</a>
+            <a href="../price/index.html">報酬体系</a>
+            <a href="https://forms.gle/6Uy4fxSnFU1Lb1jH7" target="_blank">助成金診断ツール</a>
+            <a href="https://forms.gle/VEDa9CqENtJHEnQN6" target="_blank">無料相談の申込</a>
+            <label for="chk" class="hide-menu-btn">
+                <i class="fas fa-times"></i>
+            </label>
+        </ul>
+    </header>
+    <section>
+        <h1 id="audit">
+            労務監査の対策・対応
+        </h1>
+        <p>労働基準監督署調査の概要と具体的対応策は以下のスライドをご覧ください。</p>
+        <div class="googleslide"></div>
+        <p>是正勧告後の報告書作成・改善措置については当事務所にお任せください。</p>
+        <p><a href="https://www.zeseikankoku.com/adviser_nagashima.html" target="_blank">労働法務実務研究会・是正勧告対策協議会会員</a>として活動実績のある代表が、御社をサポートします。</p>
+        <p>もちろん、是正勧告を受けないような体制づくりのコンサルティングも可能です。</p>
+    </section>
+
+    <!-- iframeのレスポンシブは、CSSのpositionプロパティからでも出来ます。しかし、ナビゲーションバーでもpositionを使っているので、bodyでpositionを使うとナビゲーションバーが崩れます -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>
+        changeSlideSize();
+
+        $(window).resize(function() {
+            changeSlideSize();
+        });
+
+        function template(width, height) {
+            return '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQq9twv8Q9Y4RYEwPuyIthzSVYDGf35F9vbxeDC-71E2HDVhw55OkZ3r8NaDQuclyKW9noHpS1YhMbo/embed?start=true&loop=true&delayms=3000" frameborder="0" width="' + width + '" height="' + height + '" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>';
+        }
+
+        function changeSlideSize() {
+            var googleSlideHolder = $(".googleslide");
+            var googleSlide = null;
+
+            if (window.matchMedia('(max-width: 680px)').matches) {
+                googleSlide = template(320, 240);
+            }
+
+            if (window.matchMedia('(min-width: 681px)').matches || window.matchMedia('(min-width: 769px)').matches || window.matchMedia('(min-width: 1024px)').matches) {
+                googleSlide = template(640, 480);
+            }
+
+            if (googleSlideHolder.html() != googleSlide) {
+                googleSlideHolder.html(googleSlide);
+            }
+        }
+    </script>
+    <script>
+        $(".logo").on("mouseover", function() {
+            $(".title").css('color', '#3498db');
+            $(".subtitle").css('color', '#3498db');
+        });
+
+        $(".logo").on("mouseout", function() {
+            $(".title").css('color', '#bdc3c7');
+            $(".subtitle").css('color', '#bdc3c7');
+        });
+    </script>
+</body>
+
+</html>

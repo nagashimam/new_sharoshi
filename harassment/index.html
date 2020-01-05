@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="manifest" href="../favicon/site.webmanifest">
+    <link rel="mask-icon" href="../favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap">
+    <link rel="stylesheet" href="../navigation.css">
+    <link rel="stylesheet" href="../sanitize.css">
+    <link rel="stylesheet" href="style.css">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <title>韮崎市の社労士事務所</title>
+    <script src="https://kit.fontawesome.com/e4780c5153.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <a class="logo" href="../index.html">
+            <div>
+                <div class="subtitle">韮崎市の労務コンサルタント</div>
+                <div class="title">長島社会保険労務士事務所</div>
+            </div>
+        </a>
+        <input type="checkbox" id="chk">
+        <label for="chk" class="show-menu-btn">
+            <i class="fas fa-ellipsis-h"></i>
+        </label>
+        <ul class="menu">
+            <a href="../access/index.html">アクセス</a>
+            <a href="../audit/index.html">労務監査の対策・対応</a>
+            <a href="index.html">ハラスメント対策</a>
+            <a href="../price/index.html">報酬体系</a>
+            <a href="https://forms.gle/6Uy4fxSnFU1Lb1jH7" target="_blank">助成金診断ツール</a>
+            <a href="https://forms.gle/VEDa9CqENtJHEnQN6" target="_blank">無料相談の申込</a>
+            <label for="chk" class="hide-menu-btn">
+                <i class="fas fa-times"></i>
+            </label>
+        </ul>
+    </header>
+    <section>
+        <h1 id="harassment">
+            ハラスメント対策
+        </h1>
+        <p>ハラスメント対策の必要性について、以下のスライドをご覧ください。</p>
+        <div class="googleslide"></div>
+        <p>当事務所の<a href="https://forms.gle/pXksZitxZjE12JwP9" target="_blank">ハラスメントチェックリスト(無料)</a>で、御社の対策を今一度振り返ってみてください。</p>
+        <p>問題があれば、<a href="http://hcc.root-2002.com/2018/ha0026/" target="_blank">特定非営利活動法人・ハラスメント協議会認定コンサルタント</a>が後日アドバイスを差し上げます。</p>
+    </section>
+
+    <!-- iframeのレスポンシブは、CSSのpositionプロパティからでも出来ます。しかし、ナビゲーションバーでもpositionを使っているので、bodyでpositionを使うとナビゲーションバーが崩れます -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>
+        changeSlideSize();
+
+        $(window).resize(function() {
+            changeSlideSize();
+        });
+
+        function template(width, height) {
+            return '<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ6ww-8DIdo2xjmD3lpZKWL1pQhvSIQH0BZOAAC8FtjdMQdBWQmX9MI6EB_Ou_AJjGVKsXj3nqk3lXz/embed?start=true&loop=true&delayms=3000" frameborder="0" width="' + width + '" height="' + height + '" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>';
+        }
+
+        function changeSlideSize() {
+            var googleSlideHolder = $(".googleslide");
+            var googleSlide = null;
+
+            if (window.matchMedia('(max-width: 680px)').matches) {
+                googleSlide = template(320, 240);
+            }
+
+            if (window.matchMedia('(min-width: 681px)').matches || window.matchMedia('(min-width: 769px)').matches || window.matchMedia('(min-width: 1024px)').matches) {
+                googleSlide = template(640, 480);
+            }
+
+            if (googleSlideHolder.html() != googleSlide) {
+                googleSlideHolder.html(googleSlide);
+            }
+        }
+    </script>
+    <script>
+        $(".logo").on("mouseover", function() {
+            $(".title").css('color', '#3498db');
+            $(".subtitle").css('color', '#3498db');
+        });
+
+        $(".logo").on("mouseout", function() {
+            $(".title").css('color', '#bdc3c7');
+            $(".subtitle").css('color', '#bdc3c7');
+        });
+    </script>
+</body>
+
+</html>

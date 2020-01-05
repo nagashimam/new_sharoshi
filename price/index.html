@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="manifest" href="../favicon/site.webmanifest">
+    <link rel="mask-icon" href="../favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap">
+    <link rel="stylesheet" href="../navigation.css">
+    <link rel="stylesheet" href="../sanitize.css">
+    <link rel="stylesheet" href="style.css">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <title>韮崎市の社労士事務所</title>
+    <script src="https://kit.fontawesome.com/e4780c5153.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <a class="logo" href="../index.html">
+            <div>
+                <div class="subtitle">韮崎市の労務コンサルタント</div>
+                <div class="title">長島社会保険労務士事務所</div>
+            </div>
+        </a>
+        <input type="checkbox" id="chk">
+        <label for="chk" class="show-menu-btn">
+            <i class="fas fa-ellipsis-h"></i>
+        </label>
+        <ul class="menu">
+            <a href="../access/index.html">アクセス</a>
+            <a href="../audit/index.html">労務監査の対策・対応</a>
+            <a href="../harassment/index.html">ハラスメント対策</a>
+            <a href="index.html">報酬体系</a>
+            <a href="https://forms.gle/6Uy4fxSnFU1Lb1jH7" target="_blank">助成金診断ツール</a>
+            <a href="https://forms.gle/VEDa9CqENtJHEnQN6" target="_blank">無料相談の申込</a>
+            <label for="chk" class="hide-menu-btn">
+                <i class="fas fa-times"></i>
+            </label>
+        </ul>
+    </header>
+    <section>
+        <h1>
+            報酬体系
+        </h1>
+        <table>
+            <th> ご依頼内容 </th>
+            <th> 報酬額 </th>
+            <tr>
+                <td>助成金に関する相談</td>
+                <td>無料</td>
+            </tr>
+            <tr>
+                <td>公募取得費用</td>
+                <td>実費</td>
+            </tr>
+            <tr>
+                <td>成功報酬(助成金申請)</td>
+                <td>受給額×30% + 消費税</td>
+            </tr>
+            <tr>
+                <td>顧問契約(社会・労働保険手続きを含む)</td>
+                <td>月20,000円～(10人未満2万円。1人増加毎に+2000円)</td>
+            </tr>
+            <tr>
+                <td>顧問契約（相談業務のみ）</td>
+                <td>月10,000円～(10人未満1万円。1人増加毎に+1000円)</td>
+            </tr>
+            <tr>
+                <td>就業規則作成</td>
+                <td>300,000円～(顧問契約先、100,000円～)</td>
+            </tr>
+            <tr>
+                <td>就業規則改定</td>
+                <td>100,000円～(顧問契約先、50,000円～)</td>
+            </tr>
+            <tr>
+                <td>社会・労働保険新規適用手続き</td>
+                <td>30,000円～</td>
+            </tr>
+            <tr>
+                <td>労働保険料年度更新・社会保険算定基礎届</td>
+                <td>30,000円～</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- iframeのレスポンシブは、CSSのpositionプロパティからでも出来ます。しかし、ナビゲーションバーでもpositionを使っているので、bodyでpositionを使うとナビゲーションバーが崩れます -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>
+        $(".logo").on("mouseover", function() {
+            $(".title").css('color', '#3498db');
+            $(".subtitle").css('color', '#3498db');
+        });
+
+        $(".logo").on("mouseout", function() {
+            $(".title").css('color', '#bdc3c7');
+            $(".subtitle").css('color', '#bdc3c7');
+        });
+    </script>
+</body>
+
+</html>
